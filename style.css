@@ -1,0 +1,108 @@
+/* Basic Styling */
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    background-color: #f0f0f0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    overflow: hidden;
+}
+
+#gameContainer {
+    text-align: center;
+    position: relative;
+    width: 300px;
+}
+
+h1 {
+    font-size: 24px;
+    color: #333;
+}
+
+/* Game Area Styling */
+#gameArea {
+    position: relative;
+    width: 300px;
+    height: 400px;
+    background-color: #a8e6cf;
+    border: 2px solid #333;
+    margin-top: 20px;
+    overflow: hidden;
+}
+
+#basket {
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    width: 50px;
+    height: 50px;
+    background-color: #ff4081;
+    border-radius: 10px;
+    transform: translateX(-50%);
+}
+
+.fallingItem {
+    position: absolute;
+    width: 30px;
+    height: 30px;
+    background-color: #ff4081;
+    border-radius: 50%;
+    top: -30px;
+    left: 50%;
+    transform: translateX(-50%);
+    animation: fall 3s infinite linear;
+}
+
+/* Falling animation */
+@keyframes fall {
+    0% {
+        top: -30px;
+    }
+    100% {
+        top: 400px;
+    }
+}
+
+/* Timer and Score */
+#score, #timer {
+    font-size: 20px;
+    margin-top: 10px;
+    color: #333;
+}
+
+/* Game Over screen */
+#gameOverScreen {
+    display: none;
+    background-color: rgba(0, 0, 0, 0.7);
+    color: white;
+    padding: 20px;
+    border-radius: 10px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+}
+
+#gameOverScreen button {
+    background-color: #ff4081;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    font-size: 16px;
+    border-radius: 5px;
+    margin-top: 20px;
+}
+
+/* Hide game area during Game Over */
+#gameArea {
+    display: block;
+}
+
+#gameOverScreen button:hover {
+    background-color: #ff80ab;
+}

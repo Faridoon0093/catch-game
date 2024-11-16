@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Catch the Hearts!</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div id="gameContainer">
+        <h1>Catch the Hearts!</h1>
+        <div id="gameArea">
+            <div id="basket"></div>
+        </div>
+        <div id="score">Score: 0</div>
+        <div id="timer">Time: 60</div>
+        <div id="gameOverScreen">
+            <h2>Game Over!</h2>
+            <p>Your Final Score: <span id="finalScore"></span></p>
+            <button onclick="restartGame()">Restart</button>
+        </div>
+    </div>
+    <script src="letter.js"></script>
+</body>
+</html>
