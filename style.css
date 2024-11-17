@@ -1,9 +1,8 @@
-/* Basic Styling */
+/* CSS for the game area */
 body {
+    background-color: #000;
     margin: 0;
     padding: 0;
-    font-family: Arial, sans-serif;
-    background-color: #f0f0f0;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -11,98 +10,72 @@ body {
     overflow: hidden;
 }
 
-#gameContainer {
-    text-align: center;
-    position: relative;
-    width: 300px;
-}
-
-h1 {
-    font-size: 24px;
-    color: #333;
-}
-
-/* Game Area Styling */
 #gameArea {
     position: relative;
-    width: 300px;
-    height: 400px;
-    background-color: #a8e6cf;
-    border: 2px solid #333;
-    margin-top: 20px;
+    width: 90%;
+    height: 80%;
+    background-color: #f0f0f0;
     overflow: hidden;
 }
 
 #basket {
     position: absolute;
-    bottom: 0;
+    bottom: 10%;
     left: 50%;
-    width: 50px;
+    width: 100px;
     height: 50px;
-    background-color: #ff4081;
+    background-color: #ff5733;
     border-radius: 10px;
-    transform: translateX(-50%);
+    transition: left 0.1s ease;
 }
 
 .fallingItem {
     position: absolute;
-    width: 30px;
-    height: 30px;
-    background-color: #ff4081;
+    bottom: 100%;
+    width: 50px;
+    height: 50px;
+    background-color: #00bfff;
     border-radius: 50%;
-    top: -30px;
-    left: 50%;
-    transform: translateX(-50%);
-    animation: fall 3s infinite linear;
+    animation: fall 4s infinite linear;
 }
 
-/* Falling animation */
 @keyframes fall {
-    0% {
-        top: -30px;
-    }
-    100% {
-        top: 400px;
+    to {
+        bottom: 0;
     }
 }
 
-/* Timer and Score */
 #score, #timer {
+    color: #fff;
     font-size: 20px;
-    margin-top: 10px;
-    color: #333;
+    position: absolute;
+    top: 10px;
+    left: 20px;
 }
 
-/* Game Over screen */
 #gameOverScreen {
     display: none;
-    background-color: rgba(0, 0, 0, 0.7);
-    color: white;
-    padding: 20px;
-    border-radius: 10px;
     position: absolute;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    text-align: center;
-}
-
-#gameOverScreen button {
-    background-color: #ff4081;
     color: white;
-    border: none;
-    padding: 10px 20px;
-    cursor: pointer;
-    font-size: 16px;
-    border-radius: 5px;
-    margin-top: 20px;
+    font-size: 30px;
 }
 
-/* Hide game area during Game Over */
-#gameArea {
-    display: block;
-}
+@media screen and (max-width: 768px) {
+    #gameArea {
+        width: 100%;
+        height: 80%;
+    }
 
-#gameOverScreen button:hover {
-    background-color: #ff80ab;
+    #basket {
+        width: 80px;
+        height: 40px;
+    }
+
+    .fallingItem {
+        width: 40px;
+        height: 40px;
+    }
 }
